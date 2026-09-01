@@ -1,0 +1,10 @@
+module d_flip_flop(d,clk,rstn,q);
+input d,clk,rstn;
+output reg q;
+always @(posedge clk or negedge rstn)
+  if(!rstn)
+  q <= 0;
+  else
+  q <= d;
+
+endmodule
