@@ -1,0 +1,17 @@
+module mux_tb;
+reg s,a,b;
+wire f;
+mux test_mux(s,a,b,f);
+initial
+begin
+s=0 ; a=0 ; b=0;
+#10 s=0 ;a=0;b=0;
+#10 s=0 ;a=0;b=1;
+#10 s=0 ;a=1;b=0;
+#10 s=0 ;a=1;b=1;
+#10 s=1 ;a=0;b=0;
+#10 s=1 ;a=0;b=1;
+#10 s=1 ;a=1;b=0;
+#10 s=1 ;a=1;b=1;
+end
+endmodule

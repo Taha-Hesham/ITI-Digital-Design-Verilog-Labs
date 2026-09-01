@@ -1,0 +1,18 @@
+{D:/Courses Files/Digital_Design/Mahara_Teck/Labs/Lab_2/Lab_2_part_2/full_adder.v} {1 {vlog -work work -stats=none {D:/Courses Files/Digital_Design/Mahara_Teck/Labs/Lab_2/Lab_2_part_2/full_adder.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module full_adder
+-- Compiling module Xor
+-- Compiling module And
+-- Compiling module Or
+
+Top level modules:
+	full_adder
+
+} {} {}} {D:/Courses Files/Digital_Design/Mahara_Teck/Labs/Lab_2/Lab_2_part_2/full_adder_tb.v} {1 {vlog -work work -stats=none {D:/Courses Files/Digital_Design/Mahara_Teck/Labs/Lab_2/Lab_2_part_2/full_adder_tb.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module full_adder_tb
+
+Top level modules:
+	full_adder_tb
+
+} {} {}}

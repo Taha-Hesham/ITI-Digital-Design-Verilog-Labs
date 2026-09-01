@@ -1,0 +1,27 @@
+// ------------------- Full Adder ---------------------//
+module full_adder(a,b,cin,cout);
+input a,b,cin;
+output cout;
+
+endmodule
+
+// ------------------- Xor Gate ---------------------//
+module Xor(a,b,f);
+input a,b;
+output f;
+
+endmodule
+
+// ------------------- And ---------------------//
+module And(a,b,f);
+input a,b;
+output f;
+assign f=a&b;
+endmodule
+
+// ------------------- or ---------------------//
+module Or(a,b,f);
+input a,b;
+output f;
+assign f=a|b;
+endmodule

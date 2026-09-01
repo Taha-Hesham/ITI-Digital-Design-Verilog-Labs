@@ -1,0 +1,46 @@
+// ------------------- Mux 2-1 ---------------------//
+module mux (s,a,b,f);
+input s,a,b;
+output f;
+wire not_s,out_g1,out_g2;
+
+Not g0(s,not_s);
+And g1(not_s,a,out_g1);
+And g2(s,b,out_g2);
+Or g3(out_g1,out_g2,f);
+endmodule
+
+// ------------------- Not Gate ---------------------//
+module Not (a,b);
+input a;
+output b;
+assign b=~a;
+endmodule
+
+// ------------------- And Gate ---------------------//
+module And (a,b,f);
+input a,b;
+output f;
+assign f=a&b;
+endmodule
+
+// ------------------- Or Gate ---------------------//
+module Or (a,b,f);
+input a,b;
+output f;
+assign f=a|b;
+endmodule
+
+// ------------------- And Gate ---------------------//
+module And (a,b,f);
+input a,b;
+output f;
+assign f=a&b;
+endmodule
+
+// ------------------- Or Gate ---------------------//
+module Or (a,b,f);
+input a,b;
+output f;
+assign f=a|b;
+endmodule
