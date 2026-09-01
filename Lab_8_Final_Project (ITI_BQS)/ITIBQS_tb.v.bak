@@ -1,0 +1,139 @@
+`timescale 10ns / 1ns
+//###############################################################################
+/* ITI Verilog Course 
+ AUTHOR:  Assoc.Prof. Ahmed Shalaby,	 DATE:	11/2025
+ https://bu.edu.eg/staff/ahmedshalaby14
+ Project: ITIBQS
+ Module Name :    ITIBQS_tb
+ Description:   testbench for ITIBQS
+*/
+//###############################################################################
+/* ------------------------  Module Declarations ----------------------------- */
+module ITIBQS_tb();
+// ------------------------ Parameter Declarations --------------------------- //
+// -------------------------- Inputs Declarations ---------------------------- //
+// ------------------------- Outputs Declarations ---------------------------- //
+// --------------------------- Wire Declarations ----------------------------- //
+// empty and full flags 
+wire emptyFlag, fullFlag; 
+// alarm signals for empty and full vilotions.
+wire emptyAlarm, fullAlarm; 
+// seven segments display 
+wire [6:0] pCountDisplay, waitTimeDisplay_1, waitTimeDisplay_2; 
+// ---------------------------- Reg Declarations ----------------------------- //
+    reg rstn;
+    reg clk;
+    reg frontSensorInput;
+    reg backSensorInput;
+    reg [2:0] tellers;
+
+    integer i;
+// --------------------------------------------------------------------------- //
+// ---------------------------- Initial setup  ------------------------------- //
+    // Generate clock 
+    initial 
+		begin
+			clk = 0;
+			forever #50 clk = ~clk;
+		end
+	// Stimulus block 
+    initial 
+    begin
+        // 1. Reset active low / empty flag
+        rstn = 0;
+        frontSensorInput = 1;
+        backSensorInput  = 1;
+        tellers = 3'b001;
+        #100;              
+        rstn = 1;            
+        #100;  
+              
+        // frontSensorInput / empty alarm
+        # 100 frontSensorInput = 0;
+        # 100 frontSensorInput = 1;	
+
+        // 7 persons enter (Fill the queue) / full flag
+        for (i = 0; i < 7; i = i + 1) 
+	begin
+            #100 backSensorInput  = 0;
+            #100 backSensorInput  = 1;
+        end
+
+	// backSensorInput / full alarm
+	# 100 backSensorInput  = 0;
+	# 100 backSensorInput  = 1;
+	
+	// 7 persons quit (Empty the queue) / empty flag
+        for (i = 0; i < 7; i = i + 1) 
+	begin
+            #100 frontSensorInput  = 0;
+            #100 frontSensorInput  = 1;
+        end
+
+	// no change ( 1 enter / 1 quit)
+	# 100 frontSensorInput  = 0;
+	      backSensorInput   = 0;
+	
+	# 100 frontSensorInput  = 1;
+	      backSensorInput   = 1;
+
+	// empty alarm
+	# 100 frontSensorInput  = 0;
+	# 100 frontSensorInput  = 1;
+
+        // 2. Reset active low / empty flag
+        rstn = 0;
+	tellers = 3'b111;
+
+        #100;              
+        rstn = 1;            
+        #100;
+	
+	// frontSensorInput / empty alarm
+        # 100 frontSensorInput = 0;
+        # 100 frontSensorInput = 1;
+	
+	// 7 persons enter (Fill the queue) / full flag
+    	for (i = 0; i < 7; i = i + 1) 
+	begin
+            #100 backSensorInput  = 0;
+    	    #100 backSensorInput  = 1;
+   	end
+
+	// backSensorInput / full alarm
+	# 100 backSensorInput  = 0;
+	# 100 backSensorInput  = 1;
+	
+        $stop;  // end simulation
+    end
+	// dispaly on transcript window
+    initial begin
+    	$display("--------------------------- Test Bench for ITIBQS --------------------------------     ");
+	$display("                  Time | rstn | front | back | tellers | empFlg | fullFlg | empAlrm | fullAlrm | Count | WaitTime");
+	$monitor(" %d     %b       %b      %b        %b         %b         %b       %b          %b         %d      %d",
+		  $time, rstn, frontSensorInput, backSensorInput, tellers,  emptyFlag,  fullFlag,  emptyAlarm, fullAlarm, ITIBQS_testUnit.pCount, ITIBQS_testUnit.data);
+    end
+	
+// --------------------------------------------------------------------------- //
+// ------------------------- Instantiation Modules --------------------------- //
+ITIBQS ITIBQS_testUnit ( 
+        .rstn(rstn),
+        .clk(clk),
+        .frontSensorInput(frontSensorInput),
+        .backSensorInput(backSensorInput),
+        .tellers(tellers), 
+		.emptyFlag(emptyFlag), 
+		.fullFlag(fullFlag), 
+		.emptyAlarm(emptyAlarm), 
+		.fullAlarm(fullAlarm),
+		.pCountDisplay(pCountDisplay), 
+		.waitTimeDisplay_1(waitTimeDisplay_1), 
+		.waitTimeDisplay_2(waitTimeDisplay_2));
+// --------------------------------------------------------------------------- //
+// ----------------------- Combinational Logic  ------------------------------ //
+// --------------------------------------------------------------------------- //
+// ----------------------- Sequential  Logic  -------------------------------- //
+// --------------------------------------------------------------------------- //
+// --------------------------------------------------------------------------- //
+endmodule
+// ----------------------------- End of File --------------------------------- //
