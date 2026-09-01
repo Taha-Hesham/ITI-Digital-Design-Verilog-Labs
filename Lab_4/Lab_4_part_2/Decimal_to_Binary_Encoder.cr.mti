@@ -1,0 +1,8 @@
+{D:/Courses Files/Digital_Design/Mahara_Teck/Labs/Lab_4/Lab_4_part_2/Decimal_to_Binary_Encoder.v} {1 {vlog -work work -stats=none {D:/Courses Files/Digital_Design/Mahara_Teck/Labs/Lab_4/Lab_4_part_2/Decimal_to_Binary_Encoder.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module decimal_to_binary_encoder
+
+Top level modules:
+	decimal_to_binary_encoder
+
+} {} {}}
