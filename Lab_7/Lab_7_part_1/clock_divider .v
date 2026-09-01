@@ -1,0 +1,19 @@
+module clock_div (clk,rst,newclk);
+input clk,rst;
+output reg newclk;
+reg [24:0] count ;
+
+always @(posedge clk,posedge rst)
+	begin
+	if(rst) begin
+	newclk <=0;
+	count <=0;
+	end
+	else if(count >= 25) begin
+	newclk <= ~newclk ; 
+	count <=0;
+	end
+	else
+	count <=count+1;
+	end
+endmodule

@@ -1,0 +1,22 @@
+{D:/Courses Files/Digital_Design/Mahara_Teck/Labs/Lab_7/Lab_7_part_1/clock_divider .v} {1 {vlog -work work -stats=none {D:/Courses Files/Digital_Design/Mahara_Teck/Labs/Lab_7/Lab_7_part_1/clock_divider .v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module clock_div
+
+Top level modules:
+	clock_div
+
+} {} {}} {D:/Courses Files/Digital_Design/Mahara_Teck/Labs/Lab_7/Lab_7_part_1/one_hot_counter .v} {1 {vlog -work work -stats=none {D:/Courses Files/Digital_Design/Mahara_Teck/Labs/Lab_7/Lab_7_part_1/one_hot_counter .v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module one_hot_counter
+
+Top level modules:
+	one_hot_counter
+
+} {} {}} {D:/Courses Files/Digital_Design/Mahara_Teck/Labs/Lab_7/Lab_7_part_1/Top_Module.v} {1 {vlog -work work -stats=none {D:/Courses Files/Digital_Design/Mahara_Teck/Labs/Lab_7/Lab_7_part_1/Top_Module.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module top_module
+
+Top level modules:
+	top_module
+
+} {} {}}
