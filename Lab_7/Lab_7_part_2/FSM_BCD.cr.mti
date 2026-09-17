@@ -1,8 +1,0 @@
-{D:/Courses Files/Digital_Design/Mahara_Teck/Labs/Lab_7/Lab_7_part_2/FSM_BCD.v} {1 {vlog -work work -stats=none {D:/Courses Files/Digital_Design/Mahara_Teck/Labs/Lab_7/Lab_7_part_2/FSM_BCD.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module fsm_BCD
-
-Top level modules:
-	fsm_BCD
-
-} {} {}}

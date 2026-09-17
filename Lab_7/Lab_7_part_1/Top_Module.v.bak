@@ -1,9 +1,0 @@
-module top_module (clk,rst,count);
-input clk,rst;
-wire newclk;
-output [9:0] count ;
-
-clock_div clock_div_dup (clk,rst,newclk);
-one_hot_counter one_hot_counter_dup (newclk,rst,count);
-
-endmodule

@@ -1,4 +1,15 @@
+# Simulation Output and Logs
 work/
 transcript
 *.vcd
 *.wlf
+
+# ModelSim / QuestaSim Project Artifacts
+*.mpf
+*.mpf_new
+*.mti
+*.ucdb
+
+# Text Editor and System Backup Files
+*.bak
+*~
